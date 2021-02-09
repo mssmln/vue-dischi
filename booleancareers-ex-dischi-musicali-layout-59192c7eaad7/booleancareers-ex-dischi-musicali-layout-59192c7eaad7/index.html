@@ -20,7 +20,7 @@
         <div id="app">
           <!-- seleziona il genere -->
           <select >
-            <option v-for="genere in generi" :value="genere">
+            <option v-for="(genere,indice) in generi" :value="genere" @click="filtraGenere(indice)">
               {{ genere }}
             </option>
           </select>

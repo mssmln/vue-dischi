@@ -13,7 +13,7 @@ var app = new Vue ({
   el: '#app',
   data: {
     dischi: [],
-    generi: []
+    generi: ['All']
   },
   mounted(){
     for(let i = 0; i < 10; i++){
@@ -33,5 +33,21 @@ var app = new Vue ({
 
     }
     console.log(this.generi);
+  },
+  methods: {
+    filtraGenere(index){
+      console.log(index);
+      this.dischi.filter((item,i) => {
+        if (item.genre == this.generi[i]){
+          return item;
+        }
+        console.log(item);
+
+      });
+
+
+
+
+    }
   }
 });
