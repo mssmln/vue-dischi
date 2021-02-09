@@ -35,7 +35,7 @@
                 <span class="author">Sting</span>
                 <span class="year">1993</span>
             </div> -->
-            <div class="cd" v-for="disco in dischi">
+            <div class="cd" v-for="(disco,indice) in dischi" :class="disco.genre == generi[indice] ? 'active' : ''">
                 <img :src="disco.poster" :alt="disco.title">
                 <h3>
                   {{ disco.title }}

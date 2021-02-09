@@ -12,6 +12,7 @@
 var app = new Vue ({
   el: '#app',
   data: {
+    dischiCopia: [], // opzione suggerita da Giacomo da commentare alla fine
     dischi: [],
     generi: ['All']
   },
@@ -23,6 +24,9 @@ var app = new Vue ({
         // console.log(result.data.response);
         this.dischi = result.data.response;
         // console.log(this.dischi[i].title);
+
+        // opzione Giacomo da commentare alla fine
+        this.dischiCopia = result.data.response;
 
         // popoliamo con i generi
         this.dischi.forEach((item) => {
@@ -37,13 +41,11 @@ var app = new Vue ({
   methods: {
     filtraGenere(index){
       console.log(index);
-      this.dischi.filter((item,i) => {
-        if (item.genre == this.generi[i]){
-          return item;
-        }
-        console.log(item);
-
+      // nel nuovo array ritorniamo i valori che corrispondono al valore della option
+      let dischiFiltrati = this.dischi.filter((item) => {
+        return (item.genre == this.generi[index]) // ritorna tutto l'item se item.genre rispetta la condizione
       });
+      console.log(dischiFiltrati);
 
 
 
