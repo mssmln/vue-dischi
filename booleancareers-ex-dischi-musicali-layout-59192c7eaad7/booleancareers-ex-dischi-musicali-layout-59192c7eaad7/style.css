@@ -45,7 +45,7 @@ header img {
 }
 
 .cd {
-    display: none;
+    display: none; /* rather than flex */
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
